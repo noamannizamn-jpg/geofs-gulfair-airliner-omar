@@ -1,0 +1,33 @@
+{
+    "aircraft": {
+        "name": "Gulf Air Omar 787",
+        "model": "airliner.dae",
+        "textures": [
+            "texture.png"
+        ],
+        "mass": 120000,
+        "wingSpan": 60,
+        "length": 63,
+        "engine": {
+            "type": "jet",
+            "count": 2,
+            "thrust": 280000
+        },
+        "performance": {
+            "cruiseSpeed": 850,
+            "maxSpeed": 950,
+            "stallSpeed": 150
+        },
+        "controls": {
+            "flaps": true,
+            "spoilers": true,
+            "gear": true
+        },
+        "lights": {
+            "landing": true,
+            "navigation": true,
+            "beacon": true,
+            "strobe": true
+        }
+    }
+}
