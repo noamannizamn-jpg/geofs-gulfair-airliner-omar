@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aircraft>
+  <name>Gulf Airliner 800 (Omar Edition)</name>
+  <description>Large twin-jet airliner with Gulf Air - Omar livery, afterburner boost, flaps, spoilers, HUD.</description>
+
+  <model url="airliner.dae" />
+  <texture url="texture.png" />
+
+  <mass value="120000"/>
+  <fuel max="60000" initial="30000"/>
+
+  <engines>
+    <engine type="turbofan" count="2" maxThrust="600000" spoolTime="3.0"/>
+    <!-- Afterburner toggle: multiplies thrust when key 'B' is pressed -->
+    <afterburner key="B" factor="1.5"/>
+  </engines>
+
+  <aerodynamics wingArea="400" wingSpan="60" clMax="1.6" cd0="0.02" oswald="0.85" />
+  <stability pitchDamp="0.25" rollDamp="0.18" yawDamp="0.22" />
+
+  <controls aileronSensitivity="0.6" elevatorSensitivity="0.55" rudderSensitivity="0.5" trimRate="0.2" />
+
+  <limits vne="900" vno="850" vfe="260" />
+  <assists autoTrim="true" autoRudder="true" />
+
+  <hud enabled="true">
+    <element type="airspeed" x="0.05" y="0.1" size="1.0"/>
+    <element type="altitude" x="0.85" y="0.1" size="1.0"/>
+    <element type="verticalSpeed" x="0.85" y="0.2" size="1.0"/>
+    <element type="heading" x="0.5" y="0.9" size="1.2"/>
+  </hud>
+
+  <lights>
+    <light type="nav" leftWing="-24,0,5" rightWing="24,0,5" tail="0,2,-26"/>
+    <light type="beacon" position="0,3,0"/>
+    <light type="strobe" leftWing="-26,0,5" rightWing="26,0,5"/>
+    <light type="landing" position="0,-1,10"/>
+  </lights>
+
+  <gear>
+    <wheel name="nose"   position="0,-3,18" radius="0.6" brake="false"/>
+    <wheel name="left"   position="-3,-3,-4" radius="0.9" brake="true"/>
+    <wheel name="right"  position="3,-3,-4"  radius="0.9" brake="true"/>
+  </gear>
+
+  <!-- Flaps: controlled by key 'F' -->
+  <flaps key="F" stages="0,10,20,30" />
+
+  <!-- Spoilers: controlled by key '/' -->
+  <spoilers key="/" dragFactor="1.5" />
+</aircraft>
